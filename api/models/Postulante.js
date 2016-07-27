@@ -9,6 +9,54 @@ module.exports = {
 
   attributes: {
 
+    cedulaPostulante: {
+      type:'string'
+    },
+    nombrePostulante: {
+      type:'string'
+    },
+    apellidoPostulante: {
+      type:'string'
+    },
+    telefonoPostulante: {
+      type:'string'
+    },
+    celularPostulante: {
+      type:'string'
+    },
+    emailPostulante: {
+      type:'string'
+    },
+    nacionalidadPostulante: {
+      type:'string'
+    },
+    estadoCivilPostulante: {
+      type:'string'
+    },
+    generoPostulante: {
+      type:'string'
+    },
+    fechaNacimientoPostulante: {
+      type:'date'
+    },
+    descripciónPerfilPostulante: {
+      type:'string'
+    },
+    cvPostulante: {
+      type:'string'
+    },
+    contraseniaPostulante: {
+      type:'string'
+    },
+    idUsuario: {
+      type:'integer'
+    },
+    // Add a reference to Postulacion
+    postulaciones: {
+      collection: 'postulacion',
+      via: 'idPostulante'
+    }
+
+
   }
 };
-

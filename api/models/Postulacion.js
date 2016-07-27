@@ -8,7 +8,17 @@
 module.exports = {
 
   attributes: {
+    fechaPostulacion: {
+      type: 'date'
+    },
 
+    // Add a reference to postulante
+    idPostulante: {
+      model: 'Postulante'
+    },
+    // Add a reference to OfertaTrabajo
+    idOfertaTrabajo: {
+      model: 'OfertaTrabajo'
+    }
   }
 };
-

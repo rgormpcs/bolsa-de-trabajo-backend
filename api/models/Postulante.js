@@ -48,15 +48,10 @@ module.exports = {
     contraseniaPostulante: {
       type:'string'
     },
-    idUsuario: {
-      type:'integer'
-    },
     // Add a reference to Postulacion
     postulaciones: {
       collection: 'postulacion',
       via: 'idPostulante'
     }
-
-
   }
 };

@@ -8,7 +8,6 @@
 module.exports = {
 
   attributes: {
-
     cedulaEmpleador:{
       type:'string'
     },
@@ -21,7 +20,7 @@ module.exports = {
     telefonoEmpleador:{
       type:'string'
     },
-    emailEmpleador:{
+    correoEmpleador:{
       type:'string'
     },
     nombreEmpresaEmpleador:{
@@ -30,15 +29,10 @@ module.exports = {
     contraseniaEmpleador:{
       type:'string'
     },
-    idUsuario:{
-      type:'integer'
-    },
     // Add a reference to OfertaTrabajo
-   OfertaTrabajos: {
+   ofertaTrabajos: {
      collection: 'OfertaTrabajo',
      via: 'idEmpleador'
    }
-
-
   }
 };

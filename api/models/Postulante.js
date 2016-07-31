@@ -39,7 +39,7 @@ module.exports = {
     fechaNacimientoPostulante: {
       type:'date'
     },
-    descripciónPerfilPostulante: {
+    descripcionPerfilPostulante: {
       type:'string'
     },
     cvPostulante: {

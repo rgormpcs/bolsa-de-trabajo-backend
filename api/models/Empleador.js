@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-
   attributes: {
     cedulaEmpleador:{
       type:'string'

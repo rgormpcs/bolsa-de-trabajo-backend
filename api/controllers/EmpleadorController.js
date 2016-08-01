@@ -4,7 +4,6 @@
  * @description :: Server-side logic for managing empleadors
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
 module.exports = {
   login: function(req, res) {
     var parametros = req.allParams();

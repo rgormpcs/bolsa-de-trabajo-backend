@@ -17,16 +17,16 @@ module.exports = {
     facultadTrabajo: {
       type: 'string'
     },
-    remuneración: {
+    remuneracion: {
       type: 'float'
     },
-    direcciónTrabajo: {
+    direccionTrabajo: {
       type: 'string'
     },
-    descripciónTrabajo: {
+    descripcionTrabajo: {
       type: 'string'
     },
-    fechaInicioPublicaciónTrabajo: {
+    fechaInicioPublicacionTrabajo: {
       type: 'date'
     },
     fechaFinPublicacionTrabajo: {

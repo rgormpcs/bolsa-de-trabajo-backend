@@ -23,5 +23,16 @@ module.exports = {
         return res.ok(empleador);
       }
     });
+  }/*,
+
+  cargarDatosEmpelador: function(req, res) {
+    function (respuesta) {
+                  $scope.empleador = respuesta.data;
+                  console.log(respuesta);
+              }
+              , function (error) {
+                  console.log(error);
+                  return res.ok(empleador);
   }
+}*/
 };

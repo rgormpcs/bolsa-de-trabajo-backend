@@ -25,25 +25,34 @@ module.exports = {
     });
   },
   getEmpleador: function(req, res) {
-      var parametros = req.allParams();
-      console.log(parametros);
-      Empleador.findOne({
-        id: parametros.idEmpleador
-      }).exec(function(err, empleador) {
-        if (err) console.log(err);
-        return res.ok(empleador);
-      });
-    },
-    updateEmpleador:function(req, res) {
-      var parametros = req.allParams();
-      console.log(parametros);
-      Empleador.findOne({
-        id: parametros.idEmpleador
-      }).exec(function(err, empleador) {
-        if (err) console.log(err);
-        //TODO: modificar el empleador
-        return res.ok(empleador);
-      });
-    }
+    var parametros = req.allParams();
+    console.log(parametros);
+    Empleador.findOne({
+      id: parametros.idEmpleador
+    }).exec(function(err, empleador) {
+      if (err) console.log(err);
+      return res.ok(empleador);
+    });
+  },
+  updateEmpleador: function(req, res) {
+    var parametros = req.allParams();
+    console.log(parametros);
+    Empleador.update({
+      id: parametros.idEmpleador
+    }, {
+      cedulaEmpleador: parametros.cedulaEmpleador,
+      nombreEmpleador: parametros.nombreEmpleador,
+      apellidoEmpleador: parametros.apellidoEmpleador,
+      telefonoEmpleador: parametros.telefonoEmpleador,
+      correoEmpleador: parametros.correoEmpleador,
+      nombreEmpresaEmpleador: parametros.nombreEmpresaEmpleador,
+      contraseniaEmpleador: parametros.contraseniaEmpleador,
+    }).exec(function(err, empleador) {
+      if (err) console.log(err);
+      //TODO: modificar el empleador
+      console.log('empleador updated', empleador);
+      return res.ok(empleador);
+    });
+  }
 
 };

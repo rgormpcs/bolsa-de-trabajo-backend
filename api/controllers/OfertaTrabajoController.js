@@ -6,33 +6,25 @@
  */
 
 module.exports = {
-    registrarNuevaOfertaBE: function (req, res) {
-
-        for (var i = 0; i < $scope.ofertaTrabajo.length; i++) {
-
-            if ($scope.empleador.idEmpleador == $scope.ofertaTrabajo[i].id) {
-
-                respuesta.data.idEmpleador = $scope.ofertaTrabajo[i];
-            }
-
-        }
-        $scope.ofertaTrabajo.push(respuesta.data);
-
-        $scope.ofertaTrabajo = {
-            areaTrabajo: ""
-            , tipoDePuestoTrabajo: ""
-            , facultadTrabajo: ""
-            , remuneracion: ""
-            , direccionTrabajo: ""
-            , descripcionTrabajo: ""
-            , fechaInicioPublicacionTrabajo: ""
-            , fechaFinPublicacionTrabajo: ""
-            , idEmpleador: $stateParams.idEmpleador            
-        }
-    
-        , function (error) {
-            console.log(error);
-        }
-    }
+  updateOferta: function(req, res) {
+    var parametros = req.allParams();
+    console.log(parametros);
+    OfertaTrabajo.update({
+      id: parametros.idOfertaTrabajo
+    }, {
+      areaTrabajo: parametros.areaTrabajo,
+      tipoDePuestoTrabajo: parametros.tipoDePuestoTrabajo,
+      facultadTrabajo: parametros.facultadTrabajo,
+      remuneracion: parametros.remuneracion,
+      direccionTrabajo: parametros.direccionTrabajo,
+      descripcionTrabajo: parametros.descripcionTrabajo,
+      fechaInicioPublicacionTrabajo: parametros.fechaInicioPublicacionTrabajo,
+      fechaFinPublicacionTrabajo: parametros.fechaFinPublicacionTrabajo,
+    }).exec(function(err, ofertaTrabajo) {
+      if (err) console.log(err);
+      console.log('OfertaTrabajo updated', ofertaTrabajo);
+      return res.ok(ofertaTrabajo[0]);
+    });
+  }
 
 };

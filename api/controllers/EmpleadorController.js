@@ -49,9 +49,8 @@ module.exports = {
       contraseniaEmpleador: parametros.contraseniaEmpleador,
     }).exec(function(err, empleador) {
       if (err) console.log(err);
-      //TODO: modificar el empleador
       console.log('empleador updated', empleador);
-      return res.ok(empleador);
+      return res.ok(empleador[0]);
     });
   }
 

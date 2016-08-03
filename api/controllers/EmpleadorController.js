@@ -23,16 +23,38 @@ module.exports = {
         return res.ok(empleador);
       }
     });
-  }/*,
+  },
+  getEmpleador: function(req, res) {
+      var parametros = req.allParams();
+      console.log(parametros);
+      Empleador.findOne({
+        id: parametros.idEmpleador
+      }).exec(function(err, empleador) {
+        if (err) console.log(err);
+        return res.ok(empleador);
+      });
+    },
+    updateEmpleador:function(req, res) {
+      var parametros = req.allParams();
+      console.log(parametros);
+      Empleador.findOne({
+        id: parametros.idEmpleador
+      }).exec(function(err, empleador) {
+        if (err) console.log(err);
+        //TODO: modificar el empleador
+        return res.ok(empleador);
+      });
+    }
+    /*,
 
-  cargarDatosEmpelador: function(req, res) {
-    function (respuesta) {
-                  $scope.empleador = respuesta.data;
-                  console.log(respuesta);
-              }
-              , function (error) {
-                  console.log(error);
-                  return res.ok(empleador);
-  }
-}*/
+      cargarDatosEmpelador: function(req, res) {
+        function (respuesta) {
+                      $scope.empleador = respuesta.data;
+                      console.log(respuesta);
+                  }
+                  , function (error) {
+                      console.log(error);
+                      return res.ok(empleador);
+      }
+    }*/
 };

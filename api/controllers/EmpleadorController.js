@@ -52,6 +52,16 @@ module.exports = {
       console.log('empleador updated', empleador);
       return res.ok(empleador[0]);
     });
+  },
+  getOfertaTrabajoPorEmpleador: function(req, res) {
+    var parametros = req.allParams();
+    console.log(parametros);
+    Empleador.findOne({
+      id: parametros.idEmpleador
+    }).exec(function(err, empleador) {
+      if (err) console.log(err);
+      return res.ok(empleador);
+    });
   }
 
 };

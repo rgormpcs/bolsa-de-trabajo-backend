@@ -29,11 +29,11 @@ module.exports = {
   getOfertaTrabajoPorEmpleador: function(req, res) {
     var parametros = req.allParams();
     console.log(parametros);
-    OfertaTrabajo.findOne({
-      id: parametros.idOfertaTrabajo
-    }).exec(function(err, OfertaTrabajo) {
+    Empleador.findOne({
+      id: parametros.idEmpleador
+    }).exec(function(err, empleador) {
       if (err) console.log(err);
-      return res.ok(ofertaTrabajo);
+      return res.ok(empleador);
     });
   }
 

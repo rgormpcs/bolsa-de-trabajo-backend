@@ -6,11 +6,11 @@
  */
 
 module.exports = {
-  login: function(req, res) {
+  loginPostulante: function(req, res) {
     var parametros = req.allParams();
     console.log(parametros);
     Postulante.findOne({
-      correoPostulante: parametros.correo
+      emailPostulante: parametros.email
     }).exec(function(err, postulante) {
 
       if (err) console.log(err);

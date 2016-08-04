@@ -10,14 +10,14 @@ module.exports = {
     var parametros = req.allParams();
     console.log(parametros);
     Postulante.findOne({
-      emailPostulante: parametros.email
+      emailPostulante: parametros.correo
     }).exec(function(err, postulante) {
 
       if (err) console.log(err);
 
       if (parametros.contrasenia != postulante.contraseniaPostulante) {
         return res.badRequest({
-          error: 'Contraseña Incorrecto'
+          error: 'Contraseña Incorrecta'
         });
       } else {
         delete postulante.contraseniaPostulante;

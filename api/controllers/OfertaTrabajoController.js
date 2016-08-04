@@ -25,6 +25,16 @@ module.exports = {
       console.log('OfertaTrabajo updated', ofertaTrabajo);
       return res.ok(ofertaTrabajo[0]);
     });
+  },
+  getOfertaTrabajoPorEmpleador: function(req, res) {
+    var parametros = req.allParams();
+    console.log(parametros);
+    OfertaTrabajo.findOne({
+      id: parametros.idOfertaTrabajo
+    }).exec(function(err, OfertaTrabajo) {
+      if (err) console.log(err);
+      return res.ok(ofertaTrabajo);
+    });
   }
 
 };

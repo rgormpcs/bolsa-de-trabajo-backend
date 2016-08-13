@@ -12,17 +12,19 @@ module.exports = {
     Postulante.findOne({
       emailPostulante: parametros.correo
     }).exec(function(err, postulante) {
-
+      console.log('entro a controller Login BACKEND');
       if (err) console.log(err);
-
-      if (parametros.contrasenia != postulante.contraseniaPostulante) {
-        return res.badRequest({
-          error: 'Contraseña Incorrecta'
-        });
-      } else {
-        delete postulante.contraseniaPostulante;
-        return res.ok(postulante);
+      if (postulante) {
+        if (parametros.contrasenia != postulante.contraseniaPostulante) {
+          return res.badRequest({
+            error: 'Contraseña Incorrecta'
+          });
+        } else {
+          delete postulante.contraseniaPostulante;
+          return res.ok(postulante);
+        }
       }
+
     });
   },
   getPostulante: function(req, res) {

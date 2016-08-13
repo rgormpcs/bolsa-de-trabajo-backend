@@ -13,15 +13,17 @@ module.exports = {
     }).exec(function(err, empleador) {
 
       if (err) console.log(err);
-
-      if (parametros.contrasenia != empleador.contraseniaEmpleador) {
-        return res.badRequest({
-          error: 'Contraseña Incorrecto'
-        });
-      } else {
-        delete empleador.contraseniaEmpleador;
-        return res.ok(empleador);
+      if (empleador) {
+        if (parametros.contrasenia != empleador.contraseniaEmpleador) {
+            return res.badRequest({
+            error: 'Contraseña Incorrecto'
+          });
+        } else {
+          delete empleador.contraseniaEmpleador;
+          return res.ok(empleador);
+        }
       }
+
     });
   },
   getEmpleador: function(req, res) {
